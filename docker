@@ -45,3 +45,13 @@ yum -y install docker-ce docker-ce-cli containerd.io
 systemctl enable docker
 systemctl start docker 
 
+# docker compose 安装
+# 这个有时候下载很慢 ， 可以用翻墙代理下载
+curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+chmod +x /usr/local/bin/docker-compose
+
+echo "set ok"
+
+exit 0
+
