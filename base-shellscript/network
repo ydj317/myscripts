@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+# Name: network
+# Desc: 设置HOST-ONLY 网卡 并且配置 独立的静态 IP
+# Date: 2020-04-16 by yongirl
+
+clear
+
+# Check if user is root
+if [ $(id -u) != "0" ]; then
+  echo "Error: You must be root to run this script."
+  exit 1
+fi
+
+# Header prompt
+echo "================================================================================"
+echo "host-only ip set"
+echo "================================================================================"
+
+echo "DEVICE=enp0s8
+ONBOOT=yes
+BOOTPROTO=static
+IPADDR0=192.168.56.200" > /etc/sysconfig/network-scripts/ifcfg-enp0s8
+
+systemctl restart network
+
+echo "set ok"
+
+exit 0
