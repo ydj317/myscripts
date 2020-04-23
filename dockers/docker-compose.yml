@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  php7230:
+    container_name: php7230
+    image: php7230
+    volumes:
+      - /home/winshare/server/www:/home/dev
+      - /home/winshare/server/php7230:/home/volume
+    expose:
+      - "9000"
+  httpd:
+    container_name: httpd
+    image: httpd
+    volumes:
+      - /home/winshare/server/www:/home/dev
+      - /home/winshare/server/httpd:/home/volume
+    ports:
+      - "80:80"
+  mariadb:
+    container_name: mariadb
+    image: mariadb:10.4.12-bionic
+    environment:
+      MYSQL_ROOT_PASSWORD: '!@#!@#'
+    expose:
+      - "3306"
