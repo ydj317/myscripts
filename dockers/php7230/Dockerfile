@@ -1,14 +1,17 @@
 FROM php:7.2.30-fpm-alpine3.11
 
-EXPOSE 9000
+COPY ./config/php.ini /usr/local/etc/php/php.ini
 
-COPY entrypoint.sh /usr/local/bin/
-COPY ./config/php.ini /home/config/php.ini
-
-RUN  chmod +x /usr/local/bin/entrypoint.sh \
+RUN  chmod 644 /usr/local/etc/php/php.ini \
      && docker-php-ext-install mysqli
 
-VOLUME ["/home/volume", "/home/dev"]
+ENTRYPOINT ["docker-php-entrypoint"]
 
-CMD ["/usr/local/bin/entrypoint.sh"]
+WORKDIR /var/www/html
+
+STOPSIGNAL SIGQUIT
+
+EXPOSE 9000
+
+CMD ["php-fpm"]
 
