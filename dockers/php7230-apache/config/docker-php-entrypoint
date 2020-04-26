@@ -1,0 +1,19 @@
+#!/bin/sh
+set -e
+
+if [ ! -f "/home/volume/apache2.conf" ]; then
+    cp /etc/apache2/apache2.conf /home/volume/apache2.conf
+fi
+
+rm -rf /etc/apache2/apache2.conf
+
+cp /home/volume/apache2.conf /etc/apache2/apache2.conf
+chmod 644 /etc/apache2/apache2.conf
+
+
+# first arg is `-f` or `--some-option`
+if [ "${1#-}" != "$1" ]; then
+	set -- apache2-foreground "$@"
+fi
+
+exec "$@"
