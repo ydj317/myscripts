@@ -1,0 +1,61 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 2 (0x2)
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C=CN, ST=jilin, L=yanji, O=yj, OU=yj, CN=simplexi
+        Validity
+            Not Before: Dec  6 09:02:16 2019 GMT
+            Not After : Dec  3 09:02:16 2029 GMT
+        Subject: C=CN, ST=jilin, O=yj, OU=yj, CN=php.local
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                RSA Public-Key: (1024 bit)
+                Modulus:
+                    00:c6:6e:56:fa:51:f1:86:92:f3:04:6b:9b:06:bb:
+                    69:cd:4b:ab:d7:b8:80:22:65:e2:e0:b5:bf:e2:f4:
+                    9d:60:dd:91:66:d6:cd:48:f8:ed:9b:a6:38:2f:92:
+                    17:6f:b0:8f:5d:b7:e1:5e:b8:a4:d5:4f:6c:dd:f5:
+                    d5:dd:36:de:bb:5d:19:35:1e:47:75:0c:12:df:62:
+                    5f:6b:c6:83:9e:95:ca:f4:3d:f2:e0:6e:a8:87:02:
+                    ab:95:cf:2c:18:10:8a:66:99:e4:b7:1b:6d:e0:18:
+                    4e:1e:18:11:0c:b5:5a:21:e5:42:6c:97:31:04:a1:
+                    73:39:77:11:85:b3:7c:8c:53
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Subject Alternative Name: 
+                DNS:php5.local, DNS:*.php5.local, DNS:php7.local, DNS:*.php7.local
+    Signature Algorithm: sha256WithRSAEncryption
+         76:d7:42:0e:d9:68:f7:c0:4e:32:39:39:4f:87:a7:5e:de:a4:
+         51:85:aa:f1:a5:52:a2:3f:17:c9:42:78:c8:de:a8:2a:6a:66:
+         3b:17:e1:fa:0b:b2:e6:b5:23:e1:18:a6:70:3f:b8:af:45:cd:
+         8c:da:80:67:5d:c0:48:55:6f:1b:e4:79:f7:ea:4e:68:2d:b7:
+         32:10:19:d4:35:f0:e8:05:65:83:c7:3d:8a:40:f2:96:12:7a:
+         ee:74:14:d9:6a:77:45:f3:06:45:e1:2e:2a:60:94:05:72:a3:
+         0b:4f:eb:8f:ed:de:64:e1:1f:0f:35:de:3d:9d:d9:8d:96:9d:
+         ec:ff:e1:c2:eb:95:e9:d3:cf:49:a1:3d:e0:35:1b:b6:0b:08:
+         d2:f4:1c:d8:3f:1e:9f:0e:6d:53:8f:51:be:bf:cc:19:d6:f3:
+         10:1c:f4:8c:d2:01:23:54:df:50:69:2f:54:dc:a5:ab:3f:b8:
+         4b:6c:3c:f6:43:ad:68:17:e6:1f:ff:1c:57:84:90:21:f5:39:
+         92:c4:51:7c:d4:96:06:81:5e:1c:d1:8f:99:f2:b0:2b:d6:8f:
+         fb:2f:0f:62:51:cc:bd:4e:ce:51:a4:7e:b2:51:bf:7c:31:5c:
+         68:75:5a:64:52:ad:e3:dd:47:27:2b:e4:d2:fe:0f:1b:ef:1a:
+         f9:18:e7:27
+-----BEGIN CERTIFICATE-----
+MIIC3TCCAcWgAwIBAgIBAjANBgkqhkiG9w0BAQsFADBaMQswCQYDVQQGEwJDTjEO
+MAwGA1UECAwFamlsaW4xDjAMBgNVBAcMBXlhbmppMQswCQYDVQQKDAJ5ajELMAkG
+A1UECwwCeWoxETAPBgNVBAMMCHNpbXBsZXhpMB4XDTE5MTIwNjA5MDIxNloXDTI5
+MTIwMzA5MDIxNlowSzELMAkGA1UEBhMCQ04xDjAMBgNVBAgMBWppbGluMQswCQYD
+VQQKDAJ5ajELMAkGA1UECwwCeWoxEjAQBgNVBAMMCXBocC5sb2NhbDCBnzANBgkq
+hkiG9w0BAQEFAAOBjQAwgYkCgYEAxm5W+lHxhpLzBGubBrtpzUur17iAImXi4LW/
+4vSdYN2RZtbNSPjtm6Y4L5IXb7CPXbfhXrik1U9s3fXV3Tbeu10ZNR5HdQwS32Jf
+a8aDnpXK9D3y4G6ohwKrlc8sGBCKZpnktxtt4BhOHhgRDLVaIeVCbJcxBKFzOXcR
+hbN8jFMCAwEAAaNBMD8wPQYDVR0RBDYwNIIKcGhwNS5sb2NhbIIMKi5waHA1Lmxv
+Y2FsggpwaHA3LmxvY2FsggwqLnBocDcubG9jYWwwDQYJKoZIhvcNAQELBQADggEB
+AHbXQg7ZaPfATjI5OU+Hp17epFGFqvGlUqI/F8lCeMjeqCpqZjsX4foLsua1I+EY
+pnA/uK9FzYzagGddwEhVbxvkeffqTmgttzIQGdQ18OgFZYPHPYpA8pYSeu50FNlq
+d0XzBkXhLipglAVyowtP64/t3mThHw813j2d2Y2Wnez/4cLrlenTz0mhPeA1G7YL
+CNL0HNg/Hp8ObVOPUb6/zBnW8xAc9IzSASNU31BpL1Tcpas/uEtsPPZDrWgX5h//
+HFeEkCH1OZLEUXzUlgaBXhzRj5nysCvWj/svD2JRzL1OzlGkfrJRv3wxXGh1WmRS
+rePdRycr5NL+DxvvGvkY5yc=
+-----END CERTIFICATE-----

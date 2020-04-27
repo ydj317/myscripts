@@ -1,21 +1,37 @@
 version: '3.8'
 
+networks:
+  dev_network:
 
 services:
+  nginx:
+    container_name: nginx
+    image: nginx
+    volumes:
+      - /home/winshare/server/nginx:/home/volume
+    networks:
+      - dev_network
+    ports:
+      - "80:80"
+      - "443:443"
   php7230-apache:
     container_name: php7230-apache
-    image: php7230-apache
+    image: php7230-apache:v2
     volumes:
       - /home/winshare/server/www:/home/www
       - /home/winshare/server/httpd:/home/volume
+    networks:
+      - dev_network
     ports:
       - "8001:8001"
   php7317-apache:
     container_name: php7317-apache
-    image: php7317-apache
+    image: php7317-apache:v2
     volumes:
       - /home/winshare/server/www:/home/www
       - /home/winshare/server/httpd:/home/volume
+    networks:
+      - dev_network
     ports:
       - "8002:8002"
   mariadb:
@@ -25,6 +41,8 @@ services:
       MYSQL_ROOT_PASSWORD: '!@#!@#'
     volumes:
       - /home/server/datadir/mariadb:/var/lib/mysql
+    networks:
+      - dev_network
     expose:
       - "3306"
   phpmyadmin:
@@ -32,5 +50,7 @@ services:
     container_name: 'phpmyadmin'
     environment:
       PMA_HOST: mariadb
+    networks:
+      - dev_network
     ports:
       - '8080:80'

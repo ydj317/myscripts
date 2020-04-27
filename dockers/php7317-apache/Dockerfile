@@ -19,3 +19,6 @@ RUN chmod 644 /usr/local/etc/php/php.ini \
     install-php-extensions xdebug mysqli pdo_mysql mongodb exif gd gettext soap memcache memcached pgsql pdo_pgsql sockets
 
 
+RUN sed -i '$a xdebug.remote_enable = 1' /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
+    && sed -i '$a xdebug.remote_host = 192.168.56.1' /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+
