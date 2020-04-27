@@ -1,4 +1,4 @@
-FROM php:7.2.30-apache-buster
+FROM php:7.3.17-apache-buster
 
 
 COPY ./config/php.ini /usr/local/etc/php/php.ini

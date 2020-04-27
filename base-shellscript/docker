@@ -45,11 +45,31 @@ yum -y install docker-ce docker-ce-cli containerd.io
 systemctl enable docker
 systemctl start docker 
 
+#开启远程控制
+mkdir /etc/systemd/system/docker.service.d
+chmod 755 /etc/systemd/system/docker.service.d
+
+echo "[Service]
+ExecStart=
+ExecStart=/usr/bin/dockerd -H fd:// -H tcp://0.0.0.0:2375" > /etc/systemd/system/docker.service.d/override.conf
+
+chmod 644 /etc/systemd/system/docker.service.d/override.conf
+
+systemctl daemon-reload
+systemctl restart docker.service
+
+#防火墙开启
+firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="192.168.56.1" port protocol="tcp" port="2375" accept"
+
+firewall-cmd --reload
+
+
 # docker compose 安装
 # 这个有时候下载很慢 ， 可以用翻墙代理下载
 curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 
 chmod +x /usr/local/bin/docker-compose
+
 
 echo "set ok"
 

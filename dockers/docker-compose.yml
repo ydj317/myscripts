@@ -10,6 +10,14 @@ services:
       - /home/winshare/server/httpd:/home/volume
     ports:
       - "8001:8001"
+  php7317-apache:
+    container_name: php7317-apache
+    image: php7317-apache
+    volumes:
+      - /home/winshare/server/www:/home/www
+      - /home/winshare/server/httpd:/home/volume
+    ports:
+      - "8002:8002"
   mariadb:
     container_name: mariadb
     image: mariadb
