@@ -58,6 +58,9 @@ services:
     container_name: mongodb
     image: mongo:3.6.17-xenial
     #restart: always
+    volumes:
+      - /home/server/datadir/mongo/db:/data/db
+      - /home/server/datadir/mongo/configdb:/data/configdb
     networks:
       - dev_network
     ports:

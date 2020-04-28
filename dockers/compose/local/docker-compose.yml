@@ -58,6 +58,9 @@ services:
     container_name: mongodb
     image: 10.5.1.173:5000/mongo
     #restart: always
+    volumes:
+      - /home/server/datadir/mongo/db:/data/db
+      - /home/server/datadir/mongo/configdb:/data/configdb
     networks:
       - dev_network
     ports:
