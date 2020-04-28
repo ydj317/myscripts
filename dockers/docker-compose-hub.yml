@@ -6,7 +6,7 @@ networks:
 services:
   nginx:
     container_name: nginx
-    image: 10.5.1.173:5000/nginx
+    image: yongirl320/nginx
     volumes:
       - /home/winshare/server/nginx:/home/volume
     networks:
@@ -16,7 +16,7 @@ services:
       - "443:443"
   php7230-apache:
     container_name: php7230-apache
-    image: 10.5.1.173:5000/php7230-apache
+    image: yongirl320/php7230-apache
     volumes:
       - /home/winshare/server/www:/home/www
       - /home/winshare/server/httpd:/home/volume
@@ -26,7 +26,7 @@ services:
       - "8001:8001"
   php7317-apache:
     container_name: php7317-apache
-    image: 10.5.1.173:5000/php7317-apache
+    image: yongirl320/php7317-apache
     volumes:
       - /home/winshare/server/www:/home/www
       - /home/winshare/server/httpd:/home/volume
@@ -36,7 +36,7 @@ services:
       - "8002:8002"
   mariadb:
     container_name: mariadb
-    image: 10.5.1.173:5000/mariadb
+    image: yongirl320/mariadb
     environment:
       MYSQL_ROOT_PASSWORD: '!@#!@#'
     volumes:
@@ -46,7 +46,7 @@ services:
     expose:
       - "3306"
   phpmyadmin:
-    image: 10.5.1.173:5000/phpmyadmin
+    image: phpmyadmin/phpmyadmin
     container_name: 'phpmyadmin'
     environment:
       PMA_HOST: mariadb
@@ -56,7 +56,7 @@ services:
       - '8080:80'
   mongo:
     container_name: mongodb
-    image: 10.5.1.173:5000/mongo
+    image: mongo:3.6.17-xenial
     #restart: always
     networks:
       - dev_network
@@ -67,7 +67,7 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: '!@#!@#'
   mongo-express:
     container_name: mongo-express
-    image: 10.5.1.173:5000/mongo-express
+    image: mongo-express
     #restart: always
     networks:
       - dev_network
