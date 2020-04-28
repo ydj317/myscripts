@@ -71,8 +71,9 @@ firewall-cmd --reload
 # docker compose 安装
 # 这个有时候下载很慢 ， 可以用翻墙代理下载
 #curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-
-cp ./docker-compose /usr/local/bin/docker-compose
+#cp ./docker-compose /usr/local/bin/docker-compose
+#curl http://10.5.1.173/docker-compose -o /usr/local/bin/docker-compose
+curl http://192.168.56.1/docker-compose -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 
 echo "set ok"
