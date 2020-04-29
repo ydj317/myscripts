@@ -34,6 +34,16 @@ services:
       - dev_network
     ports:
       - "8002:8002"
+  php7033-apache:
+    container_name: php7033-apache
+    image: yongirl320/php7033-apache
+    volumes:
+      - /home/winshare/server/www:/home/www
+      - /home/winshare/server/httpd:/home/volume
+    networks:
+      - dev_network
+    ports:
+      - "8003:8003"
   mariadb:
     container_name: mariadb
     image: yongirl320/mariadb

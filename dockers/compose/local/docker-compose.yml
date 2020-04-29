@@ -34,6 +34,16 @@ services:
       - dev_network
     ports:
       - "8002:8002"
+  php7033-apache:
+    container_name: php7033-apache
+    image: 10.5.1.173:5000/php7033-apache
+    volumes:
+      - /home/winshare/server/www:/home/www
+      - /home/winshare/server/httpd:/home/volume
+    networks:
+      - dev_network
+    ports:
+      - "8003:8003"
   mariadb:
     container_name: mariadb
     image: 10.5.1.173:5000/mariadb
