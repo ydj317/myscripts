@@ -25,27 +25,33 @@ docker pull yongirl320/php7317-apache
 docker pull yongirl320/php7033-apache
 docker pull yongirl320/mariadb
 docker pull yongirl320/nginx
+docker pull yongirl320/redis5
 docker pull phpmyadmin/phpmyadmin
 docker pull mongo
 docker pull mongo-express
+docker pull rediscommander/redis-commander:latest
 
 docker tag yongirl320/php7230-apache ${REGISTY}/php7230-apache
 docker tag yongirl320/php7317-apache ${REGISTY}/php7317-apache
 docker tag yongirl320/php7033-apache ${REGISTY}/php7033-apache
 docker tag yongirl320/mariadb ${REGISTY}/mariadb
 docker tag yongirl320/nginx ${REGISTY}/nginx
+docker tag yongirl320/redis5 ${REGISTY}/redis5
 docker tag phpmyadmin/phpmyadmin ${REGISTY}/phpmyadmin
 docker tag mongo ${REGISTY}/mongo
 docker tag mongo-express ${REGISTY}/mongo-express
+docker tag rediscommander/redis-commander:latest ${REGISTY}/redis-commander
 
 docker push ${REGISTY}/php7230-apache
 docker push ${REGISTY}/php7317-apache
 docker push ${REGISTY}/php7033-apache
 docker push ${REGISTY}/mariadb
 docker push ${REGISTY}/nginx
+docker push ${REGISTY}/redis5
 docker push ${REGISTY}/phpmyadmin
 docker push ${REGISTY}/mongo
 docker push ${REGISTY}/mongo-express
+docker push ${REGISTY}/redis-commander
 
 
 echo "set ok"

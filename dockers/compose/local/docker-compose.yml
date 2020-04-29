@@ -74,6 +74,19 @@ services:
       - dev_network
     ports:
       - '6379:6379'
+  redis-commander:
+    container_name: redis-commander
+    hostname: redis-commander
+    image: 10.5.1.173:5000/redis-commander
+    networks:
+      - dev_network
+    depends_on:
+      - "redis5"
+    environment:
+      REDIS_HOST: redis5
+      REDIS_PASSWORD: '!@#!@#' 
+    ports:
+    - "8082:8081"
   mongo:
     container_name: mongodb
     image: 10.5.1.173:5000/mongo
