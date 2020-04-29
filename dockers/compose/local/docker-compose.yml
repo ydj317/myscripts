@@ -64,6 +64,16 @@ services:
       - dev_network
     ports:
       - '8080:80'
+  redis5:
+    container_name: redis5
+    image: 10.5.1.173:5000/redis5
+    #restart: always
+    volumes:
+      - /home/server/datadir/redis:/data
+    networks:
+      - dev_network
+    ports:
+      - '6379:6379'
   mongo:
     container_name: mongodb
     image: 10.5.1.173:5000/mongo

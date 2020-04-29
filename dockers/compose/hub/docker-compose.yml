@@ -64,6 +64,16 @@ services:
       - dev_network
     ports:
       - '8080:80'
+  redis5:
+    container_name: redis5
+    image: yongirl320/redis5
+    #restart: always
+    volumes:
+      - /home/server/datadir/redis:/data
+    networks:
+      - dev_network
+    ports:
+      - '6379:6379'
   mongo:
     container_name: mongodb
     image: mongo:3.6.17-xenial
