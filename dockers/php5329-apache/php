@@ -1,0 +1,45 @@
+
+
+
+
+# 下面是 安装PHP需要的
+yum groupinstall -y "development tools"
+
+yum -y install perl libxml2 libxml2-devel bzip2-devel gdbm-devel libjpeg-turbo-devel freetype-devel openssl openssl-devel libpng libpng-devel libtool-ltdl-devel libicu-devel postgresql-devel readline-devel libxslt-devel gcc-c++
+
+yum install -y libXpm-devel mariadb-devel libmcrypt-devel
+
+yum install -y perl-devel 
+
+
+wget -P /root/download http://kr1.php.net/distributions/php-5.3.29.tar.gz
+
+# 需要先安装CURL
+wget -P /root/download https://curl.haxx.se/download/curl-7.54.0.tar.gz
+cd /root/download
+tar zxvf curl-7.54.0.tar.gz
+cd curl-7.54.0
+./configure --prefix=/usr/local/curl --without-nss --with-ssl
+make && make install
+
+# 需要先安装mcrypt
+wget -P /root/download https://jaist.dl.sourceforge.net/project/mcrypt/Libmcrypt/2.5.8/libmcrypt-2.5.8.tar.gz
+cd /root/download
+tar zxvf libmcrypt-2.5.8.tar.gz
+cd libmcrypt-2.5.8
+./configure
+make && make install
+
+
+cp /usr/local/lib/libmcrypt.so.4  /usr/lib64/
+
+
+
+./configure --prefix=/home/apps/php5329 --with-apxs2=/home/apps/apache24/bin/apxs --with-mysql --with-mysqli --with-pdo-mysql --with-pgsql --with-pdo-pgsql --with-libdir=lib64 --disable-debug --enable-sockets --enable-sysvsem --enable-sysvshm --enable-sysvmsg --enable-exif --with-curl=/usr/local/curl --with-gd --with-gdbm --enable-gd-native-ttf --enable-gd-jis-conv --with-freetype-dir --with-png-dir --with-jpeg-dir --with-xpm-dir --with-gettext --with-iconv --enable-pcntl --with-readline --with-openssl --with-bz2 --with-zlib --with-mcrypt --with-mhash --enable-mbstring=all --enable-mbregex --enable-libxml --with-xmlrpc --enable-ftp --enable-dba --with-pear --disable-ipv6
+
+make 
+make install
+
+
+cp /root/download/php-5.3.29/php.ini-development /home/apps/php5329/lib/php.ini
+

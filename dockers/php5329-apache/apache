@@ -1,0 +1,18 @@
+
+
+
+yum install -y apr-devel apr-util-devel pcre-devel
+
+
+wget https://mirror.bit.edu.cn/apache//httpd/httpd-2.4.43.tar.gz
+
+
+tar zxvf httpd-2.4.43.tar.gz
+
+
+./configure --prefix=/home/apps/apache24 --enable-so
+
+
+ln -sfT /dev/stderr "/home/apps/apache24/logs/error_log"
+ln -sfT /dev/stdout "/home/apps/apache24/logs/access_log"
+
